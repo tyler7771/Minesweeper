@@ -2,11 +2,11 @@ require_relative "board"
 require_relative "game"
 
 class Tile
-attr_accessor :bomb, :flag, :empty
+attr_accessor :bomb, :flag, :revealed
   def initialize
     @bomb = false
     @flag = false
-    @empty = true
+    @revealed = false
   end
 
   def bomb_populate(num)
@@ -26,8 +26,8 @@ attr_accessor :bomb, :flag, :empty
     self[pos].empty = false
   end
 
-  def reveal
-
+  def reveal(pos)
+    self[pos].revealed = true
   end
 
   def neighbors
