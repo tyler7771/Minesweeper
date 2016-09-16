@@ -1,6 +1,6 @@
 class Board
   attr_reader :grid
-  def initialize(grid = Array.new(9) {Array.new(9) {"*"}})
+  def initialize(grid = Array.new(9) {Array.new(9) {Tile.new}})
     @grid = grid
   end
 
@@ -21,7 +21,5 @@ class Board
     grid[pos] = val
   end
 
-  def bomb_populate(num)
-    puts "Hello World!"
-  end
+
 end
